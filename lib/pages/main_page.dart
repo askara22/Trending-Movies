@@ -38,9 +38,9 @@ class _MainPageState extends State<MainPage> {
       textInputAction: TextInputAction.search,
       decoration: const InputDecoration(
         enabledBorder:
-            UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+            UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
         focusedBorder:
-            UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+            UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
         hintText: 'Search',
         hintStyle: TextStyle(
           color: Colors.white60,

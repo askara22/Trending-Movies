@@ -104,5 +104,53 @@ List<TrendingMovies> trendingMoviesList = [
         'images/movies/ideofyou_1.jpeg',
         'images/movies/ideofyou_2.jpeg',
         'images/movies/ideofyou_3.jpeg'
+      ]),
+  TrendingMovies(
+      title: 'Kingdom of the Planet of the Apes',
+      year: '2024',
+      rating: 4,
+      duration: '2h 25m',
+      synopsis:
+          'The new Apes movie is set many years after the conclusion of 2017\'s War for the Planet of the Apes. Many apes societies have grown from when the Moses-like Caesar brought his people to an oasis, while humans have been reduced to a feral-like existence. Some ape groups have never heard of Caesar, while others have contorted his teaching to build burgeoning empires. In this setting, one ape leader begins to enslave other groups to find human technology, while another ape, who watched his clan be taken, embarks on a journey to find freedom. A young human woman becomes key to the latter\'s quest, although she has plans of her own.',
+      artists: 'Josh Friedman, Rick Jaffa, Amanda Silver',
+      director: 'Wes Ball',
+      genre: ['Action', 'Adventure', 'Sci-fi'],
+      imagePoster: 'images/poster/apes.jpg',
+      imageMovies: [
+        'images/movies/apes_1.jpeg',
+        'images/movies/apes_2.jpeg',
+        'images/movies/apes_3.webp'
+      ]),
+  TrendingMovies(
+      title: 'Dune: Part Two',
+      year: '2024',
+      rating: 3,
+      duration: '2h 46m',
+      synopsis:
+          'Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, he endeavors to prevent a terrible future only he can foresee.',
+      artists: 'Timothée Chalamet, Zendaya, Rebecca Ferguson',
+      director: 'Denis Villeneuve',
+      genre: ['Action', 'Adventure', 'Drama'],
+      imagePoster: 'images/poster/dune.jpeg',
+      imageMovies: [
+        'images/movies/dune_1.webp',
+        'images/movies/dune_2.png',
+        'images/movies/dune_3.webp'
+      ]),
+  TrendingMovies(
+      title: 'Furiosa: A Mad Max Saga',
+      year: '2024',
+      rating: 4,
+      duration: '2h 28m',
+      synopsis:
+          'As the world fell, young Furiosa is snatched from the Green Place of Many Mothers and falls into the hands of a great Biker Horde led by the Warlord Dementus. Sweeping through the Wasteland they come across the Citadel presided over by The Immortan Joe. While the two Tyrants war for dominance, Furiosa must survive many trials as she puts together the means to find her way home.',
+      artists: 'Anya Taylor-Joy, Chris Hemsworth, Tom Burke',
+      director: 'George Miller',
+      genre: ['Action', 'Adventure', 'Sci-Fi'],
+      imagePoster: 'images/poster/furiosa.jpeg',
+      imageMovies: [
+        'images/movies/furiosa_1.jpeg',
+        'images/movies/furiosa_2.jpeg',
+        'images/movies/furiosa_3.webp'
       ])
 ];
