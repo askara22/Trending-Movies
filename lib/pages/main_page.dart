@@ -50,7 +50,7 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget _searchGridView() {
+  Widget _searchGridView(final int gridCount) {
     return GridView.builder(
         itemCount: _searchIndexList.length,
         itemBuilder: (context, searchIndex) {
@@ -112,14 +112,14 @@ class _MainPageState extends State<MainPage> {
             ),
           );
         },
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: gridCount,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
         ));
   }
 
-  Widget _defaultGridView() {
+  Widget _defaultGridView(final int gridCount) {
     return GridView.builder(
         itemCount: _listMovies.length,
         itemBuilder: (context, index) {
@@ -180,8 +180,8 @@ class _MainPageState extends State<MainPage> {
             ),
           );
         },
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: gridCount,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
         ));
@@ -218,6 +218,25 @@ class _MainPageState extends State<MainPage> {
                         })
                   ]),
         backgroundColor: Colors.black,
-        body: !_searchBoolean ? _defaultGridView() : _searchGridView());
+        body: LayoutBuilder(
+            builder: (BuildContext context, BoxConstraints constraints) {
+          if (!_searchBoolean) {
+            if (constraints.maxWidth <= 600) {
+              return _defaultGridView(2);
+            } else if (constraints.maxWidth <= 1200) {
+              return _defaultGridView(4);
+            } else {
+              return _defaultGridView(6);
+            }
+          } else {
+            if (constraints.maxWidth <= 600) {
+              return _searchGridView(2);
+            } else if (constraints.maxWidth <= 1200) {
+              return _searchGridView(4);
+            } else {
+              return _searchGridView(6);
+            }
+          }
+        }));
   }
 }
