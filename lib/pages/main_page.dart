@@ -14,7 +14,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   bool _searchBoolean = false;
   List<int> _searchIndexList = [];
-  List<String> listMovies =
+  final List<String> _listMovies =
       trendingMoviesList.map((titles) => titles.title).toList();
 
   Widget _searchTextField() {
@@ -22,8 +22,8 @@ class _MainPageState extends State<MainPage> {
       onChanged: (String s) {
         setState(() {
           _searchIndexList = [];
-          for (int i = 0; i < listMovies.length; i++) {
-            if (listMovies[i].contains(s)) {
+          for (int i = 0; i < _listMovies.length; i++) {
+            if (_listMovies[i].toLowerCase().contains(s.toLowerCase())) {
               _searchIndexList.add(i);
             }
           }
@@ -53,9 +53,9 @@ class _MainPageState extends State<MainPage> {
   Widget _searchGridView() {
     return GridView.builder(
         itemCount: _searchIndexList.length,
-        itemBuilder: (context, index) {
-          final TrendingMovies movies = trendingMoviesList[index];
-          index = _searchIndexList[index];
+        itemBuilder: (context, searchIndex) {
+          final int movieIndex = _searchIndexList[searchIndex];
+          final TrendingMovies movies = trendingMoviesList[movieIndex];
           return GestureDetector(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -121,7 +121,7 @@ class _MainPageState extends State<MainPage> {
 
   Widget _defaultGridView() {
     return GridView.builder(
-        itemCount: listMovies.length,
+        itemCount: _listMovies.length,
         itemBuilder: (context, index) {
           final TrendingMovies movies = trendingMoviesList[index];
           return GestureDetector(
